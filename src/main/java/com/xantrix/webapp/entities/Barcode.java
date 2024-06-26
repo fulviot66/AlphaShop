@@ -1,0 +1,43 @@
+package com.xantrix.webapp.entities;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name = "BARCODE")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Barcode implements Serializable {
+	
+	private static final long serialVersionUID = 7446639033443828132L;
+	
+	@Id
+	@Column(name = "BARCODE")
+	private String barcode;
+	
+	@Column(name = "IDTIPOART")
+	private String idTipoArt;
+	
+	@ManyToOne
+	@EqualsAndHashCode.Exclude
+	@JoinColumn(name = "CODART", referencedColumnName = "codArt")
+	@JsonBackReference
+	private Articoli articolo;
+	
+	
+
+}

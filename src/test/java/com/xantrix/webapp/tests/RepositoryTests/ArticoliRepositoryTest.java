@@ -8,15 +8,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.PageRequest;
- 
+
 import com.xantrix.webapp.entities.Articoli;
 import com.xantrix.webapp.entities.Barcode;
 import com.xantrix.webapp.entities.FamAssort;
@@ -41,7 +40,7 @@ public class ArticoliRepositoryTest
 		
 		//CLASSE ENTITY ARTICOLI
 		Articoli articolo = new Articoli("123Test","Articolo di Test","PZ","",6,1.75,"1",
-				date,null,null,null,null);
+				date,null,null,null, null);
 		
 		//CLASSE ENTITY FAMASSORT
 		FamAssort famAssort = new FamAssort();
@@ -58,7 +57,7 @@ public class ArticoliRepositoryTest
 		iva.setIdIva(22);
 		articolo.setIva(iva);
 		
-		//CLASSE ENTITY ingredienti
+		//CLASSE ENTITY INGREDIENTI
 		Ingredienti ingredienti = new Ingredienti();
 		ingredienti.setCodArt("123Test");
 		ingredienti.setInfo("Test inserimento ingredienti");
@@ -74,7 +73,7 @@ public class ArticoliRepositoryTest
 	@Order(2)
 	public void TestfindByDescrizioneLike()
 	{
-		List<Articoli> items = articoliRepository.SelByDescrizioneLike("ACQUA ULIVETO%");
+		List<Articoli> items = articoliRepository.selByDescrizioneLike("ACQUA ULIVETO%");
 		assertEquals(2, items.size());
 	}
 	
