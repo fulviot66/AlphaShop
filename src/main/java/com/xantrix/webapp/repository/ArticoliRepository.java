@@ -16,7 +16,11 @@ public interface ArticoliRepository extends PagingAndSortingRepository<Articoli,
 	List<Articoli> findByDescrizioneLike(String descrizione, Pageable pageable);
 	
 	@Query(value = "SELECT * FROM ARTICOLI WHERE DESCRIZIONE LIKE %:desArt%", nativeQuery = true)
-	List<Articoli> selByDescrizioneLike(@Param("desArt") String descrizione); 
+	List<Articoli> selByDescrizioneLike(@Param("desArt") String descrizione);
+
+	@Query(value = "SELECT * FROM ARTICOLI a JOIN barcode b ON a.codart = b.codart WHERE b.barcode = :ean", 
+			nativeQuery = true)
+	Articoli selByEAN(@Param("ean")String ean);
 	
 	
 

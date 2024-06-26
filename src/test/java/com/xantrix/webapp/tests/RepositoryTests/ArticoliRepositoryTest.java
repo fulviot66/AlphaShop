@@ -26,16 +26,15 @@ import com.xantrix.webapp.repository.ArticoliRepository;
 
 @SpringBootTest()
 @TestMethodOrder(OrderAnnotation.class)
-public class ArticoliRepositoryTest
-{
+public class ArticoliRepositoryTest {
 	
 	@Autowired
 	private ArticoliRepository articoliRepository;
 	
 	@Test
 	@Order(1)
-	public void TestInsArticolo()
-	{
+	public void TestInsArticolo() {
+		
 		Date date = new Date();
 		
 		//CLASSE ENTITY ARTICOLI
@@ -96,9 +95,16 @@ public class ArticoliRepositoryTest
 				
 	}
 	
-
 	@Test
 	@Order(5)
+	public void TestfindByEAN() throws Exception
+	{
+		assertThat(articoliRepository.selByEAN("12345678"))
+				.extracting(Articoli::getDescrizione)
+				.isEqualTo("Articolo di Test");
+	}
+	@Test
+	@Order(6)
 	//@Disabled
 	public void TestDelArt() throws Exception
 	{
@@ -109,6 +115,4 @@ public class ArticoliRepositoryTest
 				
 	}
 	
-	
-
 }
