@@ -1,0 +1,61 @@
+{
+    "codArt": "123Test",
+    "descrizione": "ARTICOLO UNIT TEST INSERIMENTO",
+    "um": "PZ",
+    "codStat": "TESTART",
+    "pzCart": 6,
+    "pesoNetto": 1.75,
+    "idStatoArt": "1",
+    "dataCreazione": "2019-05-14",
+    "prezzo": 0.0,
+    "barcode": [
+        {
+            "barcode": "12345678",
+            "idTipoArt": "CP"
+        }
+    ],
+    "ingredienti": {
+        "codArt": "123Test",
+        "info": "TEST INGREDIENTI"
+    },
+    "famAssort": {
+        "id": 1,
+        "descrizione": "DROGHERIA ALIMENTARE"
+    },
+    "iva": {
+        "idIva": 22,
+        "descrizione": "IVA RIVENDITA 22%",
+        "aliquota": 22
+    }
+}
+
+{
+    "codArt": "123Test2",
+    "descrizione": "ARTICOLO UNIT TEST2 INSERIMENTO",
+    "um": "PZ",
+    "codStat": "TESTART",
+    "pzCart": 6,
+    "pesoNetto": 1.75,
+    "idStatoArt": "1",
+    "dataCreazione": "2019-05-14",
+    "prezzo": 0.0,
+    "barcode": [
+        {
+            "barcode": "12345678",
+            "idTipoArt": "CP"
+        }
+    ],
+    "ingredienti": {
+        "codArt": "123Test",
+        "info": "TEST INGREDIENTI"
+    },
+    "famAssort": {
+        "id": 1,
+        "descrizione": "DROGHERIA ALIMENTARE"
+    },
+    "iva": {
+        "idIva": 22,
+        "descrizione": "IVA RIVENDITA 22%",
+        "aliquota": 22
+    }
+}

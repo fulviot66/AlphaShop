@@ -49,10 +49,16 @@ public class ArticoliServiceImpl implements ArticoliService{
 		return retVal;
 		
 	}
+	
+	@Override
+	public Articoli SelByCodArt2 (String codart) {
+		
+		return articoliRepository.findByCodArt(codart);
+	}
 
 	@Override
-	public ArticoliDto SelByCodart(String codart) {
-		Articoli articoli = articoliRepository.findByCodArt(codart);
+	public ArticoliDto SelByCodArt(String codart) {
+		Articoli articoli = this.SelByCodArt2(codart);
 		return this.ConvertToDto(articoli);
 	}
 
@@ -75,6 +81,7 @@ public class ArticoliServiceImpl implements ArticoliService{
 	@Transactional
 	public void InsArticolo(Articoli articolo) {
 
+		articolo.setDescrizione(articolo.getDescrizione().toUpperCase());
 		articoliRepository.save(articolo);
 	}
 	

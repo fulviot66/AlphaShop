@@ -13,7 +13,9 @@ public interface ArticoliService {
 
 	public List<ArticoliDto> SelByDescrizione (String descrizione, Pageable pageable);
 	
-	public ArticoliDto SelByCodart(String codart);
+	public ArticoliDto SelByCodArt(String codart);
+	
+	public Articoli SelByCodArt2(String codart);
 	
 	public ArticoliDto SelByBarcode(String barcode);
 	

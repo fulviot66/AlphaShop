@@ -17,6 +17,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -35,24 +37,30 @@ public class Articoli implements Serializable {
 	
 	@Id
 	@Column(name = "CODART")
+	@Size(min= 5, max = 20, message = "{Size.Articoli.codArt.Validation}")
+	@NotNull(message = "{NotNull.Articoli.codArt.Validation}")
 	private String codArt;
 	
 	@Column(name = "DESCRIZIONE")
+	@Size(min= 6, max = 80, message = "{Size.Articoli.descrizione.Validation}")
 	private String descrizione;
 	
 	@Column(name = "UM")
+	@NotNull(message = "{NotNull.Articoli.um.Validation}")
 	private String um;
 	
 	@Column(name = "CODSTAT")
 	private String codStat;
 	
 	@Column(name = "PZCART")
+	@NotNull(message = "{NotNull.Articoli.pzcart.Validation}")
 	private Integer pzCart;
 	
 	@Column(name = "PESONETTO")
 	private Double pesoNetto;
 	
 	@Column(name = "IDSTATOART")
+	@NotNull(message = "{NotNull.Articoli.idStatoArt.Validation}")
 	private String idStatoArt;
 	
 	@Temporal(TemporalType.DATE)
@@ -72,6 +80,7 @@ public class Articoli implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn (name = "IDFAMASS", referencedColumnName = "ID")
+	@NotNull(message = "{NotNull.Articoli.famAssort.Validation}")
 	private FamAssort famAssort; 
 	
 	
